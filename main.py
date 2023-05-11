@@ -1,4 +1,4 @@
-# Import all relevant libraries
+# Import all relevant libraries here
 
 from machine import Pin, time_pulse_us
 from time import sleep_us, sleep
