@@ -17,7 +17,7 @@
       "id": "ultrasonic1",
       "top": -216.5,
       "left": -114.9,
-      "attrs": { "distance": "400" }
+      "attrs": { "distance": "359" }
     },
     {
       "type": "wokwi-led",
@@ -38,20 +38,33 @@
       "id": "r1",
       "top": 13.55,
       "left": 144,
-      "attrs": { "value": "220" }
+      "attrs": { "value": "330" }
     },
     {
       "type": "wokwi-resistor",
       "id": "r2",
       "top": 13.55,
       "left": 316.8,
-      "attrs": { "value": "220" }
+      "attrs": { "value": "330" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r3",
+      "top": 3.95,
+      "left": -28.8,
+      "attrs": { "value": "330" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r4",
+      "top": 32.75,
+      "left": 28.8,
+      "attrs": { "value": "470" }
     }
   ],
   "connections": [
     [ "pico:3V3_EN", "bb1:9t.e", "blue", [ "v-82.77", "h-5.38" ] ],
     [ "pico:GP27", "bb1:10t.e", "purple", [ "v-96.11", "h-128.05" ] ],
-    [ "pico:GP26", "bb1:11t.e", "orange", [ "v-110.11", "h-125.65" ] ],
     [ "bb1:35t.e", "pico:GP21", "red", [ "v169.66", "h-69.93" ] ],
     [ "bb1:53t.e", "pico:GP17", "green", [ "v195.66", "h-12.07" ] ],
     [ "ultrasonic1:GND", "bb1:tn.5", "black", [ "v38.06", "h-58.73" ] ],
@@ -62,11 +75,17 @@
     [ "ultrasonic1:ECHO", "bb1:11t.a", "orange", [ "v0" ] ],
     [ "led1:A", "bb1:29t.a", "red", [ "v0" ] ],
     [ "led2:A", "bb1:47t.a", "green", [ "v0" ] ],
-    [ "bb1:tn.1", "pico:GND.8", "black", [ "v271.43", "h25.13" ] ],
+    [ "bb1:tn.1", "pico:GND.8", "red", [ "v271.43", "h25.13" ] ],
+    [ "bb1:17t.c", "pico:GP26", "orange", [ "v183.79", "h74.68" ] ],
     [ "r1:1", "bb1:29t.c", "", [ "$bb" ] ],
     [ "r1:2", "bb1:35t.c", "", [ "$bb" ] ],
     [ "r2:1", "bb1:47t.c", "", [ "$bb" ] ],
-    [ "r2:2", "bb1:53t.c", "", [ "$bb" ] ]
+    [ "r2:2", "bb1:53t.c", "", [ "$bb" ] ],
+    [ "r3:1", "bb1:11t.b", "", [ "$bb" ] ],
+    [ "r3:2", "bb1:17t.b", "", [ "$bb" ] ],
+    [ "r4:1", "bb1:17t.e", "", [ "$bb" ] ],
+    [ "r4:2", "bb1:23t.e", "", [ "$bb" ] ],
+    [ "bb1:23t.a", "bb1:tn.18", "black", [ "v0" ] ]
   ],
   "dependencies": {}
 }
