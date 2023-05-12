@@ -1,0 +1,72 @@
+{
+  "version": 1,
+  "author": "Anderson Costa",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-breadboard", "id": "bb1", "top": -51, "left": -150.8, "attrs": {} },
+    {
+      "type": "wokwi-pi-pico",
+      "id": "pico",
+      "top": 250,
+      "left": 61.33,
+      "rotate": 270,
+      "attrs": { "env": "micropython-20220618-v1.19.1" }
+    },
+    {
+      "type": "wokwi-hc-sr04",
+      "id": "ultrasonic1",
+      "top": -216.5,
+      "left": -114.9,
+      "attrs": { "distance": "400" }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led1",
+      "top": -202.81,
+      "left": 115.14,
+      "attrs": { "color": "red" }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led2",
+      "top": -198.79,
+      "left": 286.46,
+      "attrs": { "color": "limegreen" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r1",
+      "top": 13.55,
+      "left": 144,
+      "attrs": { "value": "220" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r2",
+      "top": 13.55,
+      "left": 316.8,
+      "attrs": { "value": "220" }
+    }
+  ],
+  "connections": [
+    [ "pico:3V3_EN", "bb1:9t.e", "blue", [ "v-82.77", "h-5.38" ] ],
+    [ "pico:GP27", "bb1:10t.e", "purple", [ "v-96.11", "h-128.05" ] ],
+    [ "pico:GP26", "bb1:11t.e", "orange", [ "v-110.11", "h-125.65" ] ],
+    [ "bb1:35t.e", "pico:GP21", "red", [ "v169.66", "h-69.93" ] ],
+    [ "bb1:53t.e", "pico:GP17", "green", [ "v195.66", "h-12.07" ] ],
+    [ "ultrasonic1:GND", "bb1:tn.5", "black", [ "v38.06", "h-58.73" ] ],
+    [ "led1:C", "bb1:tn.21", "black", [ "v0" ] ],
+    [ "led2:C", "bb1:tn.36", "black", [ "v0" ] ],
+    [ "ultrasonic1:VCC", "bb1:9t.a", "blue", [ "v0" ] ],
+    [ "ultrasonic1:TRIG", "bb1:10t.a", "purple", [ "v0" ] ],
+    [ "ultrasonic1:ECHO", "bb1:11t.a", "orange", [ "v0" ] ],
+    [ "led1:A", "bb1:29t.a", "red", [ "v0" ] ],
+    [ "led2:A", "bb1:47t.a", "green", [ "v0" ] ],
+    [ "bb1:tn.1", "pico:GND.8", "black", [ "v271.43", "h25.13" ] ],
+    [ "r1:1", "bb1:29t.c", "", [ "$bb" ] ],
+    [ "r1:2", "bb1:35t.c", "", [ "$bb" ] ],
+    [ "r2:1", "bb1:47t.c", "", [ "$bb" ] ],
+    [ "r2:2", "bb1:53t.c", "", [ "$bb" ] ]
+  ],
+  "dependencies": {}
+}
